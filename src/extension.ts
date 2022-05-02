@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import { showQuickPicks } from './commands';
 import { Dependency, NodeDependenciesProvider } from './NodeDependenciesProvider';
 
 export function activate(context: vscode.ExtensionContext) {
@@ -20,6 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
 	context.subscriptions.concat([
+    vscode.commands.registerCommand("treeView.showQuickPicks", showQuickPicks),
     vscode.commands.registerCommand("treeView.refreshEntry", () => {
       vscode.window.showInformationMessage(`Successfully called refresh.`);
       nodeDependenciesProvider.refresh();
