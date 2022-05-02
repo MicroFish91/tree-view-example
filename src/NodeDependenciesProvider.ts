@@ -105,7 +105,7 @@ export class NodeDependenciesProvider implements vscode.TreeDataProvider<Depende
 
 // <--------- Dependency ---------->
 
-class Dependency extends vscode.TreeItem {
+export class Dependency extends vscode.TreeItem {
   constructor(
     public readonly label: string,
     private version: string,
@@ -120,4 +120,6 @@ class Dependency extends vscode.TreeItem {
     light: path.join(__filename, '..', '..', 'resources', 'light', 'dependency.svg'),
     dark: path.join(__filename, '..', '..', 'resources', 'dark', 'dependency.svg')
   };
+
+  contextValue = "dependency";
 }

@@ -18,10 +18,20 @@
 			{
 				"command": "treeView.refreshEntry",
 				"title": "Refresh Tree View",
-				"icon": {
-					"light": "resources/light/refresh.svg",
-					"dark": "resources/dark/refresh.svg"
-				}
+				"icon": "./src/resources/refresh.svg"
+			},
+			{
+				"command": "treeView.addEntry",
+				"title": "Add"
+			},
+			{
+				"command": "treeView.editEntry",
+				"title": "Edit",
+				"icon": "./src/resources/edit.svg"
+			},
+			{
+				"command": "treeView.deleteEntry",
+				"title": "Delete"
 			}
 		],
 		"menus": {
@@ -30,6 +40,21 @@
 					"command": "treeView.refreshEntry",
 					"when": "view == nodeDependencies",
 					"group": "navigation"
+				},
+				{
+					"command": "treeView.addEntry",
+					"when": "view == nodeDependencies"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "treeView.editEntry",
+					"when": "view == nodeDependencies && viewItem == dependency",
+					"group": "inline"
+				},
+				{
+					"command": "treeView.deleteEntry",
+					"when": "view == nodeDependencies && viewItem == dependency"
 				}
 			]
 		},
@@ -47,7 +72,7 @@
 				{
 					"id": "package-explorer",
 					"title": "Package Explorer",
-					"icon": "./src/media/test.png"
+					"icon": "./src/resources/dep.svg"
 				}
 			]
 		}
