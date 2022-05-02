@@ -16,6 +16,10 @@
 	"contributes": {
 		"commands": [
 			{
+				"command": "treeView.showQuickPicks",
+				"title": "Show Quick Picks"
+			},
+			{
 				"command": "treeView.refreshEntry",
 				"title": "Refresh Tree View",
 				"icon": "./src/resources/refresh.svg"
